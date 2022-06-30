@@ -41,4 +41,7 @@
                     <li><?php wp_loginout(); ?></li>
                     </ul>
                 </section>
+			 <section class="p-page__sidebar  p-block--lower">
+				 <p>Git連携テスト用の記入です、表示されていたらok<br>shiba</p>
+			 </section>
                 <?php endif; ?>
