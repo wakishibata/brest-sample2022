@@ -1,0 +1,39 @@
+@charset "utf-8";
+// =============================================================================
+// PC、SPの表示切り替えの値まとめ
+// =============================================================================
+
+.sp,
+.tab {
+	display: none;
+}
+.pc {
+	display: block;
+}
+@media screen and (max-width: 1080px) {
+	.sp,
+	.tab {
+		display: none;
+	}
+	.pc {
+		display: block;
+	}
+}
+@media screen and (max-width: 896px) {
+	.sp,
+	.pc {
+		display: none;
+	}
+	.tab {
+		display: block;
+	}
+}
+@media screen and (max-width: 480px) {
+	.pc,
+	.tab {
+		display: none;
+	}
+	.sp {
+		display: block;
+	}
+}

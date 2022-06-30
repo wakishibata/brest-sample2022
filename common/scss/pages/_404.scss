@@ -1,0 +1,28 @@
+@charset "utf-8";
+// =============================================================================
+// 404
+// =============================================================================
+
+.error404 {
+
+	&__body {
+		@include font-size(1.3,1.5);
+	}
+
+	&__btn {
+		display: flex;
+		align-items: center;
+
+		>a {
+			margin: 0 10px 0 0;
+		}
+
+		@include small {
+			flex-direction: column;
+			>a {
+				min-width: 180px;
+				margin: 0 0 10px;
+			}
+		}
+	}
+}

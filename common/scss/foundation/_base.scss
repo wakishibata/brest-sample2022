@@ -1,0 +1,65 @@
+@charset "utf-8";
+// =============================================================================
+// プロジェクト全体で共通して適用するスタイル
+// =============================================================================
+
+html,
+body {
+	color: rgba(0, 0, 0, 1);
+  font-size: 62.5%; //1rem=10px
+  font-family: YakuHanJP, 'Roboto', 'Noto Sans JP', sans-serif;
+  font-feature-settings: 'palt'; //safari以外はpaltを指定
+  -webkit-font-feature-settings: 'pkna'; //safariのみpknaを指定
+  writing-mode: horizontal-tb;
+  -webkit-text-size-adjust: 100%; //for iOS&Safari TxtSize
+  -webkit-tap-highlight-color: rgba(0,0,0,0.3); //タップエリアカラー
+  -webkit-touch-callout: none; //文章等を長押しした際に表示されるポップアップメニューを無効化
+  box-sizing: border-box;
+
+	//禁則処理
+	line-break: strict;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+
+//リンクテキスト
+a,
+a:visited {
+	color: rgba(0, 0, 0, 1);
+	text-decoration: none;
+	@include transition;
+	img {
+		backface-visibility:hidden;
+		-webkit-backface-visibility:hidden;//画面ちらつき防止
+		-webkit-text-decoration-skip:none;//リンクテキスト下線を他ブラウザとあわせる
+	}
+	&:hover{
+		color: rgba(0, 0, 0, 1);
+		text-decoration: none;
+		opacity:.8;
+	}
+}
+
+//画像
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+//rest.cssの追加分
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+* ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	li {
+		margin: 0;
+		padding: 0;
+	}
+}

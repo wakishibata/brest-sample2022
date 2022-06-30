@@ -1,0 +1,103 @@
+@charset "utf-8";
+// =============================================================================
+// サイドバー
+// =============================================================================
+
+.l-sidebar {
+    &__toggle-btn {
+        color: rgba(0, 0, 0, 1);
+        @include font-size(1.4, 1);
+        padding: 40px 20px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 1);
+        border-top: solid 1px rgba(217, 217, 217, 1);
+        cursor: pointer;
+
+        &.is-active {
+            i {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__snav {
+
+        /*親メニュー*/
+        &__menu {
+            li {
+                border-bottom: solid 1px rgba(217, 217, 217, 1);
+
+                &:first-child {
+                    border-top: solid 1px rgba(217, 217, 217, 1);
+                }
+
+                a {
+                    padding: 20px;
+                    position: relative;
+                    z-index: 0;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 0%;
+                        height: 100%;
+                        @include transition;
+                        z-index: -1;
+                    }
+
+                    &:hover {
+                        color: rgba(255, 255, 255, 1);
+
+                        &::before {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            /*子メニュー*/
+            .children {
+                li {
+                    &:first-child {
+                        border-top: none;
+                    }
+                    &:last-child {
+                        border-bottom: solid 1px rgba(217, 217, 217, 1);
+                    }
+
+                    a {
+                        padding: 1em 1em 1em 3em;
+                        position: relative;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 10px;
+                            transform: translate(0, -50%);
+                            width: 20px;
+                            height: 1px;
+                            background: rgba(217, 217, 217, 1) !important;
+                        }
+
+                        &:hover {
+                            color: rgba(0, 0, 0, 1);
+                            transform: translateX(3px);
+                        }
+                    }
+                }
+            }
+        }
+
+        a {
+            @include font-size(1.4, 1.5);
+            display: block;
+        }
+
+        @include medium {
+            display: none;
+        }
+    }
+}

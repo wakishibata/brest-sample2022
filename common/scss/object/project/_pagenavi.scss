@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+// =============================================================================
+// ページナビ（WP-pagenavi使用）
+// =============================================================================
+.wp-pagenavi {
+	@include font-size(1.2,1);
+    margin: 20px auto;
+    display: flex;
+    justify-content:  flex-start;
+    align-items: center;
+
+    span.pages {
+        color: rgba(0, 0, 0, 1);
+        border-top: solid 1px $color-lightgray;
+        border-left: solid 1px $color-lightgray;
+        border-bottom: solid 1px $color-lightgray;
+        padding: 10px 12px;
+        text-decoration: none;
+        text-align: center;
+        @include transition;
+
+        &:last-child {
+            border-right: solid 1px $color-lightgray;
+        }
+    }
+
+    a,
+    span.extend {
+        color: rgba(0, 0, 0, 1);
+        border-top: solid 1px $color-lightgray;
+        border-left: solid 1px $color-lightgray;
+        border-bottom: solid 1px $color-lightgray;
+        padding: 10px 12px;
+        text-decoration: none;
+        text-align: center;
+        @include transition;
+
+        &:last-child {
+            border-right: solid 1px $color-lightgray;
+        }
+    }
+
+    a:hover {
+        color: rgba(0, 0, 0, 1);
+        background-color: $color-lightgray;
+    }
+
+    span.current {
+        color: rgba(0, 0, 0, 1);
+        padding: 10px 12px;
+        text-decoration: none;
+        text-align: center;
+        background-color: $color-lightgray;
+        border: solid 1px $color-lightgray;
+    }
+}

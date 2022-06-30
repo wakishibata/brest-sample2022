@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+// =============================================================================
+// 見出し
+// =============================================================================
+
+.c-heading__pagettl-en { //英語・スラッグ
+    width: 100%;
+    padding: 80px 0;
+    //height: 360px;
+    //display: flex;
+    //justify-content: flex-start;
+    //align-items: center;
+
+    &__body {
+        @include font-size(2.6,1);
+        font-weight: bold;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 3px 0;
+        display: inline-block;
+    }
+
+    @include small {
+        text-align: center;
+
+        &__body {
+            @include font-size(2,1);
+        }
+    }
+}
+
+.c-heading__pagettl-ja { //日本語
+    width: 100%;
+    padding: 80px 0;
+    //height: 360px;
+    //display: flex;
+    //justify-content: flex-start;
+    //align-items: center;
+
+    &__body {
+        @include font-size(2,1);
+        font-weight: bold;
+        letter-spacing: 0.15em;
+        position: relative;
+        padding: 3px 0;
+        display: inline-block;
+    }
+}
+
+//セクションタイトル左揃えja
+.c-heading__left {
+    @include font-size(1.7,1.5);
+    padding: 0 0 0 30px;
+    margin: 0 auto 20px;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 20px;
+        height: 1px;
+        transform: translate(0,-50%);
+        background-color: $color-middlegray;
+    }
+}
+
+//セクションタイトル中央揃え
+.c-heading__center {
+    @include font-size(1.7,1);
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 20px 0;
+    margin: 0 auto 20px;
+    text-align: center;
+}

@@ -1,0 +1,249 @@
+@charset "utf-8";
+// =============================================================================
+// フォーム
+// =============================================================================
+
+.c-form {
+
+    .hidden {
+        display:none;
+    }
+
+    &__notice {
+        @include font-size();
+    }
+
+    &__ttl {
+        @include font-size(1.7,1.5);
+        font-weight: bold;
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    &__table {
+        @include font-size();
+        table-layout: fixed;
+        border-collapse: collapse;
+        width: 100%;
+
+        tr {
+            border-top: 1px solid rgb(239, 238, 236);
+            border-bottom: 1px solid rgb(239, 238, 236);
+        }
+
+        th {
+            font-weight: normal;
+            font-weight: 300;
+            width: 30%;
+            text-align: left;
+            padding: 10px 0;
+            vertical-align: middle;
+        }
+
+        td {
+            padding: 10px 0;
+            vertical-align: middle;
+        }
+
+        @include small {
+
+            th {
+                width: 100%;
+                display: block;
+                padding: 15px 0 0;
+            }
+
+            td {
+                width: 100%;
+                padding: 0 0 15px;
+                display: block;
+            }
+        }
+    }
+
+    //テキストフィールド
+    &__input-text {
+    	width: 100%;
+        padding: .5em !important;
+        background-color: rgb(239, 238, 236) !important;
+        border: none !important;
+    }
+
+    //テキストエリア
+    &__textarea {
+    	width: 100%;
+    	height: 200px;
+    	padding: .5em !important;
+        background-color: rgb(239, 238, 236) !important;
+        border: none !important;
+    }
+
+    //セレクトメニュー
+    &__select {
+        @include font-size(1.3,1);
+        max-width: 100%;
+        padding: 10px 30px 10px 12px;
+        background: url(../img/bars-solid.svg) center right 12px no-repeat;
+        background-size:  10px 10px;
+        border: solid 1px rgb(239, 238, 236);
+        background-color: rgba(255,255,255,1);
+    }
+
+    //ラジオボタン
+    &__radio {
+        @include font-size(1.3,1);
+        vertical-align: middle;
+    }
+
+    //チェックボックスのアニメーションスタイル
+    &__checkbox-outer {
+        label {
+            cursor: pointer;
+        }
+    }
+    &__checkbox {
+        position: relative;
+        margin: 0 1rem 0 0;
+        cursor: pointer;
+        border:none;
+    }
+    &__checkbox:before {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 1.5rem;
+        height: 0.8rem;
+        content: '';
+        -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+                transition:         transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+        -webkit-transform: rotate(-45deg) scale(0, 0);
+                transform: rotate(-45deg) scale(0, 0);
+        border: 2px solid #000;
+        border-top-style: none;
+        border-right-style: none;
+    }
+    &__checkbox:checked:before {
+        -webkit-transform: rotate(-45deg) scale(1, 1);
+                transform: rotate(-45deg) scale(1, 1);
+    }
+    &__checkbox:after {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        content: '';
+        cursor: pointer;
+        border: 2px solid rgba(217,217,217,1);
+        background: #fff;
+        transform: translate(0,-55%);
+    }
+
+    //重要箇所（赤枠）
+    &__important {
+        @include font-size();
+        border: solid 1px red;
+        padding: 10px;
+    }
+
+    //入力必須アイコン
+    &__require {
+        &::after {
+            color: red;
+            content: '＊';
+        }
+    }
+
+    @include small {
+        &__input-text {
+            @include font-size(1.6,1);
+        }
+        &__textarea {
+            @include font-size(1.6,1.5);
+        }
+        &__select {
+            @include font-size(1.6,1);
+        }
+    }
+}
+
+//label
+.mwform-radio-field label {
+    cursor: pointer;
+    background-color: rgb(239, 238, 236);
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 10px;
+    @include transition;
+}
+.mwform-radio-field label:hover {
+    opacity: .7;
+}
+
+.mw_wp_form .vertical-item {
+    
+}
+
+//入力させない
+/*.c-form__noinput {
+    pointer-events: none;
+}*/
+
+//MW FORMの入力画面で隠す
+.mw_wp_form_input .c-form__input-hide {
+    display: none !important;
+}
+
+//MW FORMの確認画面で隠す
+.mw_wp_form_confirm .c-form__confirm-hide {
+    display: none !important;
+}
+.mw_wp_form_confirm .c-form__require {
+    &::after {
+        content: none;
+    }
+}
+
+//バリデーションエラーメッセージ
+.mw_wp_form_send_error {
+    @include font-size();
+}
+
+//プライバシーポリシー
+.c-form {
+    &__privacy {
+        border: solid 1px rgb(239, 238, 236);
+        padding: 20px 40px;
+        height: 160px;
+        overflow: scroll;
+
+        @include small {
+            padding: 40px 20px;
+        }
+
+        &__heading {
+            @include font-size();
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        &__ttl {
+            @include font-size();
+            margin-bottom: 10px;
+        }
+
+        p {
+            @include font-size(1.1,2);
+        }
+
+        ul {
+            @include font-size(1.1,2);
+            list-style-type: disc;
+            padding-left: 1.5em;
+            li {
+
+            }
+        }
+    }
+}

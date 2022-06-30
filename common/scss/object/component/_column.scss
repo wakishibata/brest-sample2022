@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+// =============================================================================
+// カラム
+// =============================================================================
+
+.c-column {
+    &--left {
+        float: left;
+    }
+    &--right {
+        float: right;
+    }
+    @include small {
+        &--left {
+            float: none;
+        }
+        &--right {
+            float: none;
+        }
+    }
+
+}
+
+.c-column2 {
+    margin-left: -30px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__col {
+        width: calc(50% - 30px);
+        margin-left: 30px;
+    }
+
+    @include medium {
+        margin-left: 0;
+        &__col {
+            width: 100%;
+            margin-left: 0;
+            margin-bottom: 30px;
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+
+    }
+}
+
+.c-column3 {
+    margin-left: -30px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__col {
+        width: calc(33.333% - 30px);
+        margin-left: 30px;
+    }
+
+    @include small {
+        margin-left: 0;
+        &__col {
+            width: 100%;
+            margin-left: 0;
+            margin-bottom: 30px;
+
+            &:last-child {
+                //margin-bottom: 0px;
+            }
+        }
+
+    }
+}
+
+.c-column4 {
+    margin-left: -40px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__col {
+        width: calc(25% - 40px);
+        margin-left: 40px;
+    }
+
+    @include large {
+        margin-left: -30px;
+        &__col {
+            width: calc(25% - 30px);
+            margin-left: 30px;
+        }
+    }
+
+    @include small {
+         margin-left: -20px;
+        &__col {
+            width: calc(50% - 20px);
+             margin-left: 20px;
+        }
+    }
+}
+
+.c-column6 {
+    margin-left: -40px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__col {
+        width: calc(16.666% - 40px);
+        margin-left: 40px;
+    }
+
+    @include large {
+        margin-left: -30px;
+        &__col {
+            width: calc(16.666% - 30px);
+            margin-left: 30px;
+        }
+    }
+
+    @include small {
+        &__col {
+            width: calc(50% - 20px);
+        }
+    }
+}

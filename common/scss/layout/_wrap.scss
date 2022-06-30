@@ -1,0 +1,60 @@
+@charset "utf-8";
+// =============================================================================
+// ラップ・レスポンシブ対応（上下余白・サイド余白）
+// =============================================================================
+
+.l-wrapper {
+    visibility: hidden;
+}
+
+//通常のラッパー（1カラム）
+.l-innerwrap {
+    margin-left: auto;
+    margin-right: auto;
+
+    &--wide {
+        max-width: 1080px;
+
+        @include large {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    &--narrow {
+        max-width: 768px;
+
+        @include medium {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+}
+
+//固定ページ用ラッパー（左メイン・右サイドバー）
+.l-page-innerwrap {
+    overflow:hidden;
+    &__right {
+        float: right;
+        width: calc(100% - 80%);
+        /*background-color: #fbdb65;*/
+    }
+    &__left {
+        float: left;
+        width: calc(100% - 20%);
+        padding:0 60px;
+        //background-color: #a0a97f;
+    }
+
+    @include medium {
+        &__right {
+            float: none;
+            width: 100%;
+        }
+        &__left {
+            float: none;
+            width: 100%;
+            padding:0 20px;
+        }
+    }
+}

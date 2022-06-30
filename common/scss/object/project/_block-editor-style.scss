@@ -1,0 +1,261 @@
+@charset "UTF-8";
+
+/*============================================================================================
+↓wp Gutenbergの調整用CSS=======================================================================
+============================================================================================*/
+
+.editor-styles-wrapper {
+//the_content(); が出力する要素を包括する
+//文字サイズや色は適宜調整
+
+    color: #000;
+    @include font-size(1.3, 2);
+
+    p { //段落
+        margin-bottom: 1.5em;
+        > a { //テキストリンク
+            text-decoration: underline;
+            text-decoration-color: currentColor;
+            &:hover {
+                opacity: .5;
+            }
+        }
+    }
+
+    h1 {
+        font-size: 200%;
+        margin-top: 1em;
+        margin-bottom: .5em;
+    }
+
+    h2 {
+        font-size: 180%;
+        margin-top: 1em;
+        margin-bottom: .5em;
+    }
+
+    h3 {
+        font-size: 160%;
+        margin-top: 1em;
+        margin-bottom: .5em;
+    }
+
+    h4 {
+        font-size: 140%;
+        margin-top: 1em;
+        margin-bottom: .5em;
+    }
+
+    h5 {
+        font-size: 120%;
+        margin-top: 1em;
+        margin-bottom: .5em;
+    }
+
+    h6 {
+        font-size: 110%;
+        margin-top: 1em;
+        margin-bottom: .5em;
+    }
+
+    ul:not(.wp-block-post-template) {
+        margin: 1.5em 0 1.5em 1.5em;
+        list-style-type: disc;
+        list-style-position: outside;
+    }
+
+    ol {
+        margin: 1.5em 0 1.5em 1.5em;
+        list-style-type: decimal;
+        list-style-position: outside;
+    }
+
+    .wp-block-quote { //引用
+        padding: 1.8em 2em;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 1em;
+        > p {
+            margin-bottom: .5em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        cite {
+            &::before {
+                content: 'ー';
+                font-style: italic;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .wp-block-code { //コード
+        margin-bottom: 1.5em;
+    }
+
+    .wp-block-preformatted { //整形済みテキスト
+        font-family: inherit;
+        margin-bottom: 1.5em;
+    }
+
+    .wp-block-pullquote { //プルクオート
+
+    }
+
+    .wp-block-table { //テーブル
+        margin-bottom: 1.5em !important;
+        figcaption {
+            text-align: center;
+        }
+    }
+
+    .wp-block-verse { //詩
+        font-family: inherit;
+        font-style: italic;
+        margin-bottom: 1.5em;
+    }
+
+    .wp-block-image { //画像
+        margin: 0 0 1em;
+        > figcaption {
+            margin-top: 0.5em;
+            margin-bottom: 1em;
+        }
+    }
+
+    .wp-block-gallery { //ギャラリー
+        .blocks-gallery-grid {
+            width: 100%;
+            margin: 0 auto 1.5em;
+        }
+        > figcaption {
+            margin-bottom: 1em;
+        }
+    }
+
+    .wp-block-audio { //音声
+
+    }
+
+    .wp-block-cover { //カバー
+        margin-bottom: 1.5em;
+    }
+
+    .wp-block-file { //ファイル
+        margin-bottom: 1.5em;
+        .wp-block-file__button {
+        }
+    }
+
+    .wp-block-media-text { //メディアとテキスト
+        margin-bottom: 1.5em;
+    }
+
+    .wp-block-embed { //動画
+        margin-bottom: 1.5em;
+        figcaption {
+        }
+    }
+    .wp-block-embed__wrapper { //埋め込み要素を幅いっぱい
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-top: 56.25%;
+
+        iframe { //埋め込みYoutubeを幅いっぱい
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+
+    .wp-block-buttons { //ボタン
+        margin-bottom: 1.5em;
+    }
+
+    .wp-block-columns { //カラム
+        > p{
+            margin-bottom: initial;
+        }
+        &.has-background {
+            padding: 2em;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .wp-block-column { //カラム（入れ子）
+        > p{
+            margin-bottom: initial;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .wp-block-group { //行　グループ
+        >p{
+            margin-bottom: initial;
+        }
+        &.has-background {
+            padding: 2em;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .more-link { //続き
+        display: block;
+        text-align: right;
+    }
+
+    .wp-link-pages { //ページ区切り
+        text-align: right;
+        .post-page-numbers {
+            padding: 0 3px;
+        }
+    }
+
+    .post-nav-links { //ページ区切りのページナビ
+        padding: 1em;
+        border-top: solid 1px #ddd;
+        border-bottom: solid 1px #ddd;
+        margin-bottom: 1.5em;
+        .post-nav-ttl {
+            padding: 0 3px 0 0;
+        }
+        .post-page-numbers {
+            padding: 0 3px;
+        }
+        .current {
+            font-weight: bold;
+        }
+    }
+
+    .wp-block-search { //検索バー
+        margin-bottom: 1.5em;
+    }
+
+    .wp-block-social-links { //SNSアイコン
+        margin: 0 auto 1.5em;
+    }
+
+    .wp-block-calendar { //カレンダー
+        table th {
+            text-align: center;
+            border-right: solid 1px #fff;
+            &:last-child {
+                border-right: none;
+            }
+        }
+        tbody td {
+
+        }
+    }
+
+}

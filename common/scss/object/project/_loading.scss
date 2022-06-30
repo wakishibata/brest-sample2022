@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+// =============================================================================
+// ローディング（その他）
+// =============================================================================
+.p-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255,255,255, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-loading__preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    //width: 40px;
+    //height: 40px;
+}
+
+
+.loading5Wrap {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading5_1 {
+    position: relative;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    background: #777;
+    border-radius: 100%;
+    animation: loading5_1 1s infinite cubic-bezier(0,0,0.5,1);
+}
+.loading5_2 {
+    position: absolute;
+    z-index: -1;
+    width: 34px;
+    height: 34px;
+    border: 1px solid transparent;
+    border-radius: 100%;
+    animation: loading5_2 1s infinite cubic-bezier(0,0,0.5,1);
+}
+@keyframes loading5_1 {
+    0% {transform:scale(0.5);}
+    10% {transform:scale(1);}
+    100% {transform:scale(0.5);}
+}
+@keyframes loading5_2 {
+    0% {border: 1px solid transparent;transform:scale(0.1);}
+    10% {border: 2px solid #777;transform:scale(0.75);}
+    100% {border: 1px solid transparent;transform:scale(1.5);}
+}
